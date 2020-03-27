@@ -38,13 +38,13 @@ e.g.
  
 == Frequently Asked Questions ==
  
-= A question that someone might have =
+= Is it free? =
  
-An answer to that question.
+Yes, this plugin is free to use.
+
+= Can I show data for my country only? =
  
-= What about foo bar? =
- 
-Answer to foo bar dilemma.
+Yes, you can pass your country in the shortcode attributes.
  
 == Screenshots ==
  
