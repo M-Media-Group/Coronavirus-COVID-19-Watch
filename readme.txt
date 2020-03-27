@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Coronavirus COVID-19 Watch ===
 Contributors: mmediagroup
 
 Tags: covid, coronavirus, covid-19
