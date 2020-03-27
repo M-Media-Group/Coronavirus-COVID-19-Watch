@@ -293,4 +293,4 @@ class MMedia_Covid_Widget extends WP_Widget
 }
 // Instantiate our class
 $Covid = MMedia_Covid::getInstance();
-$my_widget = new MMedia_Covid_Widget();
+new MMedia_Covid_Widget();
