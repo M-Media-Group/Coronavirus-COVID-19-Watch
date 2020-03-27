@@ -58,7 +58,6 @@ class Covid
         add_action('widgets_init', array($this, 'wpdocs_register_widgets'));
         add_action('admin_bar_menu', array($this, 'covid_remove_toolbar_nodes'), 999);
         add_shortcode('covid-watch', array($this, 'wporg_shortcode_cases'));
-
     }
     public function wporg_shortcode_cases($atts = [], $content = null)
     {
@@ -107,7 +106,6 @@ class Covid
 
     public function covid_install()
     {
-
     }
 
     /**
@@ -118,7 +116,6 @@ class Covid
 
     public function covid_uninstall()
     {
-
     }
 
     /**
@@ -129,7 +126,6 @@ class Covid
 
     public function textdomain()
     {
-
     }
 
     /**
@@ -190,7 +186,6 @@ class Covid
 
     public function covid_remove_menus()
     {
-
     }
     /**
      * load textdomain
@@ -200,7 +195,6 @@ class Covid
 
     public function my_error_notice()
     {
-
     }
     /**
      * load textdomain
@@ -238,17 +232,14 @@ class Covid
 
     public function covid_settings_page()
     {
-
     }
     /// end class
 }
 
 class Covid_Widget extends WP_Widget
 {
-
     public function __construct()
     {
-
         parent::__construct(
             'my-text', // Base ID
             'COVID-19 confirmed cases' // Name
@@ -257,7 +248,6 @@ class Covid_Widget extends WP_Widget
         add_action('widgets_init', function () {
             register_widget('Covid_Widget');
         });
-
     }
 
     public $args = array(
@@ -269,7 +259,6 @@ class Covid_Widget extends WP_Widget
 
     public function widget($args, $instance)
     {
-
         $response = wp_remote_get('https://covid-api.mmediagroup.fr/v1/cases');
         $body = json_decode($response['body'], true);
 
@@ -286,17 +275,14 @@ class Covid_Widget extends WP_Widget
         echo '</div>';
 
         echo $args['after_widget'];
-
     }
 
     public function form($instance)
     {
-
     }
 
     public function update($new_instance, $old_instance)
     {
-
         $instance = array();
 
         // $instance['title'] = (!empty($new_instance['title'])) ? strip_tags($new_instance['title']) : '';
@@ -304,7 +290,6 @@ class Covid_Widget extends WP_Widget
 
         return $instance;
     }
-
 }
 // Instantiate our class
 $Covid = Covid::getInstance();
