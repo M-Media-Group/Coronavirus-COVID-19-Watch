@@ -21,12 +21,12 @@ You should have received a copy of the GNU General Public License
 along with {Plugin Name}. If not, see {License URI}.
  */
 
-if (!defined('COVID_VER')) {
-    define('COVID_VER', '1.0.1');
+if (!defined('MMEDIA_COVID_VER')) {
+    define('MMEDIA_COVID_VER', '1.0.1');
 }
 
 // Start up the engine
-class Covid
+class MMedia_Covid
 {
 
     /**
@@ -236,7 +236,7 @@ class Covid
     /// end class
 }
 
-class Covid_Widget extends WP_Widget
+class MMedia_Covid_Widget extends WP_Widget
 {
     public function __construct()
     {
@@ -292,5 +292,5 @@ class Covid_Widget extends WP_Widget
     }
 }
 // Instantiate our class
-$Covid = Covid::getInstance();
-$my_widget = new Covid_Widget();
+$Covid = MMedia_Covid::getInstance();
+$my_widget = new MMedia_Covid_Widget();
