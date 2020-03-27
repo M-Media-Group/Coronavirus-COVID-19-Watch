@@ -16,7 +16,7 @@ This plugin will get live data with total cases around the world and show it on 
 
 There's also a shortcode you can use in your posts to always reference the most up to date number of confirmed cases. Use the shortcode [covid-confirmed] in your code to output the current number of confirmed cases. You can pass a country and status, like [covid-confirmed country="France" status="confirmed"] or [covid-confirmed country="US" status="deaths"] to get results only from that country.
 
-This plugin uses data from Johns Hopkins University and ARCGIS, provided via API thanks to M Media (mmediagroup.fr).
+This plugin uses data from Johns Hopkins University and ARCGIS, provided via API thanks to M Media (mmediagroup.fr). Here's a link to [M Media](https://mmediagroup.fr/), the API provider. Access the API directly here [M Media](https://covid-api.mmediagroup.fr/v1/cases).
 
 == Features ==
 
