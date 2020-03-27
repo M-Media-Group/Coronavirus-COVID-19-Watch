@@ -246,7 +246,7 @@ class MMedia_Covid_Widget extends WP_Widget
         );
 
         add_action('widgets_init', function () {
-            register_widget('Covid_Widget');
+            register_widget('MMedia_Covid_Widget');
         });
     }
 
