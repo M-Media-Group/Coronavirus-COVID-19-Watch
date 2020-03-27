@@ -54,7 +54,7 @@ Answer to foo bar dilemma.
 == Changelog ==
 
 = 1.0.1 =
-* Added attribute "country" to shortcode.
+* Added attribute "country" and "status" to shortcode.
 
 = 1.0 =
 * Initial commit.
