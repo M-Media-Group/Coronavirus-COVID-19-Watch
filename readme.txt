@@ -1,3 +1,13 @@
+NO LONGER MAINTANED ON GITHUB
+Maintained on WordPress.org
+
+Browse the code: https://plugins.trac.wordpress.org/browser/coronavirus-covid-19-watch/
+Check out the SVN repository: https://plugins.svn.wordpress.org/coronavirus-covid-19-watch/
+
+
+
+
+
 === Coronavirus COVID-19 Watch ===
 Contributors: mmediagroup
 
