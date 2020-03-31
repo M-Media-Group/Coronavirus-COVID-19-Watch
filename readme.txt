@@ -1,4 +1,4 @@
-NO LONGER MAINTANED ON GITHUB
+NO LONGER MAINTAINED ON GITHUB
 Maintained on WordPress.org
 
 Browse the code: https://plugins.trac.wordpress.org/browser/coronavirus-covid-19-watch/
