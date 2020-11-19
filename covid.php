@@ -173,9 +173,14 @@ class MMedia_Covid
     public function covid_create_menu()
     {
         //create new top-level menu
-        add_menu_page('Covid Plugin', 'Covid',
-            'publish_pages', 'covid_main_menu', array($this, 'covid_settings_page'),
-            plugins_url('images/m.svg', __FILE__));
+        add_menu_page(
+            'Covid Plugin',
+            'Covid',
+            'publish_pages',
+            'covid_main_menu',
+            array($this, 'covid_settings_page'),
+            plugins_url('images/m.svg', __FILE__)
+        );
     }
 
     /**
