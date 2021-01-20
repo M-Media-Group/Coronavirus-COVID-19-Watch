@@ -2,7 +2,7 @@
 Contributors: mmediagroup
 Tags: covid, coronavirus, covid-19, Corona Virus, Corona, Virus, coronavirus-covid19
 Requires at least: 4.6
-Tested up to: 5.4
+Tested up to: 5.6
 Requires PHP: 7.2
 Stable tag: trunk
 License: GPLv2 or later
