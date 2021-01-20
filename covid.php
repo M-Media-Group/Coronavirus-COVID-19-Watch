@@ -4,7 +4,7 @@ Plugin Name: Coronavirus COVID-19 Watch
 Plugin URI: https://mmediagroup.fr/covid-19
 Description: Free live data with total cases around the world or by country. Get live data on the admin dashboard, using the helpful link in the top toolbar to quickly get more info, or via shortcode (by country or global). There's even a widget that you can add to your footers, menus, and widget areas.
 Author: M Media
-Version: 1.4.7
+Version: 1.4.8
 Author URI: https://profiles.wordpress.org/mmediagroup/
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
