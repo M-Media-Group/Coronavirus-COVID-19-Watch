@@ -1,0 +1,9 @@
+/* Reset shitty CSS from competitor plugin that causes bugs in WordPress.
+Some CSS can't be fixed (like BG colour) so we need to wait for the other plugin developer to get their stuff together */
+.postbox .inside h2 {
+	border-bottom: initial;
+	margin: auto;
+	background: initial;
+	padding: 9px 0 4px 0;
+	color: initial;
+}
