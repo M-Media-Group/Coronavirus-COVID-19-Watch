@@ -21,7 +21,7 @@ along with {Plugin Name}. If not, see {License URI}.
  */
 
 if (!defined('MMEDIA_COVID_VER')) {
-    define('MMEDIA_COVID_VER', '1.4.7');
+    define('MMEDIA_COVID_VER', '1.4.8');
 }
 
 // Start up the engine
