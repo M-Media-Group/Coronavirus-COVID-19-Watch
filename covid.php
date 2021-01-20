@@ -103,7 +103,6 @@ class MMedia_Covid
         $body = $this->getCasesData();
 
         if (strtolower($covid_atts['country']) == 'all') {
-
             $covid_atts['sort'] = strtolower($covid_atts['sort']);
             if ($covid_atts['sort'] == 'confirmed' || $covid_atts['sort'] == 'deaths') {
                 uasort($body, function (array $a, array $b) use ($covid_atts) {
@@ -149,7 +148,7 @@ class MMedia_Covid
             }
             $html .= "</table>";
             return $html;
-        } else if (isset($body[esc_html__($covid_atts['country'])])) {
+        } elseif (isset($body[esc_html__($covid_atts['country'])])) {
             $number = number_format($body[esc_html__($covid_atts['country'])]['All'][esc_html__($covid_atts['status'])]);
             return get_option('covid_setting_attribute') ? '<a href="https://mmediagroup.fr/covid-19?utm_source=wordpress&utm_medium=covid_plugin&utm_campaign=' . get_site_url() . '&utm_content=shortcode_cases" target="_BLANK" rel="noreferrer">' . $number . '</a>' : $number;
         }
@@ -457,15 +456,15 @@ class MMedia_Covid
         return 'INVALID COUNTRY';
     }
 
-/**
- * register covid_settings_init to the admin_init action hook
- */
+    /**
+     * register covid_settings_init to the admin_init action hook
+     */
 
-/**
- * callback functions
- */
+    /**
+     * callback functions
+     */
 
-// section content cb
+    // section content cb
     public function covid_settings_section_cb()
     {
         echo '<p>Control settings regarding the Coronavirus COVID-19 Watch plugin.</p>';
@@ -475,44 +474,40 @@ class MMedia_Covid
     {
         $setting = get_option('covid_setting_country');
         $array = $this->getCasesData();
-        ksort($array);
-        ?>
+        ksort($array); ?>
     <select id="covid_setting_country" name="covid_setting_country" value="<?php echo $setting ? esc_attr($setting) : 'Global'; ?>">
    <?php
 foreach ($array as $key => $value) {
             echo '<option value="' . $key . '" ' . ($setting == $key ? 'selected' : '') . '>' . $key . '</option>';
-        }
-        ?>
+        } ?>
     </select>
-    <p class="description"><?php _e('Try Global, US, France, Spain, Italy, United Kingdom, and more.', 'coronavirus-covid-19-watch');?></p>
+    <p class="description"><?php _e('Try Global, US, France, Spain, Italy, United Kingdom, and more.', 'coronavirus-covid-19-watch'); ?></p>
     <?php
-}
+    }
 
     public function covid_settings_field_attribute()
     {
         // get the value of the setting we've registered with register_setting()
         $setting = get_option('covid_setting_attribute');
-        // output the field
-        ?>
+        // output the field ?>
         <fieldset>
-            <legend class="screen-reader-text"><span><?php _e('Show attribution', 'coronavirus-covid-19-watch');?></span></legend>
-            <label for="covid_setting_attribute"><input type="checkbox" id="covid_setting_attribute" name="covid_setting_attribute" <?php echo $setting ? 'checked="checked"' : ''; ?>><?php _e('Attribute M Media, the maker of this plugin and API for the data from Johns Hopkins University, on the front-end.', 'coronavirus-covid-19-watch');?></label>
+            <legend class="screen-reader-text"><span><?php _e('Show attribution', 'coronavirus-covid-19-watch'); ?></span></legend>
+            <label for="covid_setting_attribute"><input type="checkbox" id="covid_setting_attribute" name="covid_setting_attribute" <?php echo $setting ? 'checked="checked"' : ''; ?>><?php _e('Attribute M Media, the maker of this plugin and API for the data from Johns Hopkins University, on the front-end.', 'coronavirus-covid-19-watch'); ?></label>
         </fieldset>
     <?php
-}
+    }
 
     public function covid_settings_field_toolbar()
     {
         // get the value of the setting we've registered with register_setting()
         $setting = get_option('covid_setting_toolbar');
-        // output the field
-        ?>
+        // output the field ?>
         <fieldset>
-            <legend class="screen-reader-text"><span><?php _e('Show toolbar menu', 'coronavirus-covid-19-watch');?></span></legend>
-            <label for="covid_setting_toolbar"><input type="checkbox" id="covid_setting_toolbar" name="covid_setting_toolbar" <?php echo $setting ? 'checked="checked"' : ''; ?>><?php _e('Show the toolbar menu at the top', 'coronavirus-covid-19-watch');?></label>
+            <legend class="screen-reader-text"><span><?php _e('Show toolbar menu', 'coronavirus-covid-19-watch'); ?></span></legend>
+            <label for="covid_setting_toolbar"><input type="checkbox" id="covid_setting_toolbar" name="covid_setting_toolbar" <?php echo $setting ? 'checked="checked"' : ''; ?>><?php _e('Show the toolbar menu at the top', 'coronavirus-covid-19-watch'); ?></label>
         </fieldset>
     <?php
-}
+    }
 
     public function covid_settings_page()
     {
@@ -522,10 +517,8 @@ foreach ($array as $key => $value) {
 
 class MMedia_Covid_Widget extends WP_Widget
 {
-
     public function __construct()
     {
-
         parent::__construct(
             'covid-widget', // Base ID
             __('COVID-19 confirmed cases', 'coronavirus-covid-19-watch') // Name
