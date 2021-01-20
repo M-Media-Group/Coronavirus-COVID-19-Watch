@@ -489,7 +489,7 @@ foreach ($array as $key => $value) {
     {
         // get the value of the setting we've registered with register_setting()
         $setting = get_option('covid_setting_attribute');
-        // output the field ?>
+        // output the field?>
         <fieldset>
             <legend class="screen-reader-text"><span><?php _e('Show attribution', 'coronavirus-covid-19-watch'); ?></span></legend>
             <label for="covid_setting_attribute"><input type="checkbox" id="covid_setting_attribute" name="covid_setting_attribute" <?php echo $setting ? 'checked="checked"' : ''; ?>><?php _e('Attribute M Media, the maker of this plugin and API for the data from Johns Hopkins University, on the front-end.', 'coronavirus-covid-19-watch'); ?></label>
@@ -501,7 +501,7 @@ foreach ($array as $key => $value) {
     {
         // get the value of the setting we've registered with register_setting()
         $setting = get_option('covid_setting_toolbar');
-        // output the field ?>
+        // output the field?>
         <fieldset>
             <legend class="screen-reader-text"><span><?php _e('Show toolbar menu', 'coronavirus-covid-19-watch'); ?></span></legend>
             <label for="covid_setting_toolbar"><input type="checkbox" id="covid_setting_toolbar" name="covid_setting_toolbar" <?php echo $setting ? 'checked="checked"' : ''; ?>><?php _e('Show the toolbar menu at the top', 'coronavirus-covid-19-watch'); ?></label>
