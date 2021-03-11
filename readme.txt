@@ -2,7 +2,7 @@
 Contributors: mmediagroup
 Tags: covid, coronavirus, covid-19, Corona Virus, Corona, Virus, coronavirus-covid19
 Requires at least: 4.6
-Tested up to: 5.6
+Tested up to: 5.7
 Requires PHP: 7.2
 Stable tag: trunk
 License: GPLv2 or later
@@ -91,6 +91,12 @@ We've been informed that a lot of countries are no longer reporting on recovered
 
 == Changelog ==
 
+= 1.4.9 =
+* Added support for newest version of WordPress, 5.7
+
+= 1.4.8 =
+* Readme updates
+
 = 1.4.7 =
 * Added auto-update
 * Changed map to static function so it can be referenced in other PHP code
@@ -157,8 +163,8 @@ We've been informed that a lot of countries are no longer reporting on recovered
 * Initial commit.
 
 == Upgrade Notice ==
-= 1.4.7 =
-Probably the last update you'll ever need! This update brings auto-updates. Because of the dynamic situation, we update our plugin regularly. Update to the newest version now to get the most up to date features and information.
+= 1.4.9 =
+Because of the dynamic situation, we update our plugin regularly. Update to the newest version now to get the most up to date features and information.
 
 == Privacy policy ==
 This plugin uses data from Johns Hopkins University and ARCGIS, provided via API thanks to M Media (mmediagroup.fr). Here's a link to [M Media](https://mmediagroup.fr/), the API provider. Access the API directly here [M Media](https://covid-api.mmediagroup.fr/v1/cases). The M Media API privacy policy is [here](https://mmediagroup.fr/privacy-policy), the terms of use [here](https://mmediagroup.fr/terms-and-conditions) and the JHU Data Usage policy is [here](https://github.com/CSSEGISandData/COVID-19).
