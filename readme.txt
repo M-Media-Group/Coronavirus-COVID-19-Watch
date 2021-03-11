@@ -1,5 +1,6 @@
 === Coronavirus COVID-19 Watch ===
 Contributors: mmediagroup
+Donate link: https://github.com/sponsors/M-Media-Group
 Tags: covid, coronavirus, covid-19, Corona Virus, Corona, Virus, coronavirus-covid19
 Requires at least: 4.6
 Tested up to: 5.7
@@ -93,6 +94,7 @@ We've been informed that a lot of countries are no longer reporting on recovered
 
 = 1.4.9 =
 * Added support for newest version of WordPress, 5.7
+* Added donation link
 
 = 1.4.8 =
 * Readme updates
@@ -164,7 +166,7 @@ We've been informed that a lot of countries are no longer reporting on recovered
 
 == Upgrade Notice ==
 = 1.4.9 =
-Because of the dynamic situation, we update our plugin regularly. Update to the newest version now to get the most up to date features and information.
+Because of the dynamic situation, we update our plugin regularly. Update to the newest version now to get the most up to date features and information. Has this plugin been useful to you? Consider donating at the donate link on the plugin page!
 
 == Privacy policy ==
 This plugin uses data from Johns Hopkins University and ARCGIS, provided via API thanks to M Media (mmediagroup.fr). Here's a link to [M Media](https://mmediagroup.fr/), the API provider. Access the API directly here [M Media](https://covid-api.mmediagroup.fr/v1/cases). The M Media API privacy policy is [here](https://mmediagroup.fr/privacy-policy), the terms of use [here](https://mmediagroup.fr/terms-and-conditions) and the JHU Data Usage policy is [here](https://github.com/CSSEGISandData/COVID-19).
