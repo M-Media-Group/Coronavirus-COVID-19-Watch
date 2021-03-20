@@ -49,7 +49,7 @@ Use the shortcode `[covid-vaccines]` in your code to show the current number of 
 
 You can pass a country and status, like `[covid-vaccines country="France" status="people_vaccinated"]` or `[covid-vaccines country="US" status="people_partially_vaccinated"]` to get results only from that country.
 
-You an also create a table of all country data, as you can with cases. See "Listing all countries" and replace `covid-watch` with `covid-vaccines`.
+You can also create a table of all country data, as you can with cases. See "Listing all countries" and replace `covid-watch` with `covid-vaccines`.
 
 = About recovered data =
 Some similar plugins may provide "recovered" data. We've been informed that a lot of countries are no longer reporting on recovered data because medical teams don't have the time to follow up with each patient. Because of this, Johns Hopkins and other data sources have stopped reporting recovered cases, and so have we. We recommend you don't show recovered cases as no accurate data is available.
