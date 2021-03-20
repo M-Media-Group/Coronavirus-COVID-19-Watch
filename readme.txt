@@ -9,7 +9,7 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Free live data shown on your dashboard and via shortcode or widget. Show up to date confirmed cases or deaths in your country or globally.
+Free live data shown on your dashboard and via shortcode or widget. Show up to date confirmed cases, deaths, or vaccinations in your country or globally.
 
 == Description ==
 Free live data shown on your dashboard and via shortcode or widget. Show up to date confirmed cases or deaths in your country or globally. The plugin will also add a helpful link in the top toolbar to quickly get more info. There's also a widget that you can add to your footers or menus.
