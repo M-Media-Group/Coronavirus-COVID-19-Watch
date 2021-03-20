@@ -86,6 +86,17 @@ class MMedia_Covid
         }
         return $body;
     }
+    
+    public static function getVaccinesData()
+    {
+        $body = get_transient('mmedia_covid_vaccines');
+        if (false === $body) {
+            $response = wp_remote_get('https://covid-api.mmediagroup.fr/v1/vaccines', self::$request_args);
+            $body = json_decode($response['body'], true);
+            set_transient('mmedia_covid_vaccines', $body, DAY_IN_SECONDS);
+        }
+        return $body;
+    }
 
     public function shortcode_cases($atts = [], $content = null)
     {
@@ -199,6 +210,77 @@ class MMedia_Covid
         }
         $html .= "</table>";
         return $html;
+    }
+
+    public function shortcode_vaccines($atts = [], $content = null)
+    {
+        // do something to $content
+        // always return
+        $atts = array_change_key_case((array) $atts, CASE_LOWER);
+
+        // override default attributes with user attributes
+        $covid_atts = shortcode_atts([
+            'country' => 'Global',
+            'status' => 'administered',
+            'sort' => 'alphabetical',
+            'limit' => 0,
+        ], $atts);
+        $body = $this->getVaccinesData();
+
+        if (strtolower($covid_atts['country']) == 'all') {
+            $covid_atts['sort'] = strtolower($covid_atts['sort']);
+            if ($covid_atts['sort'] == 'administered' || $covid_atts['sort'] == 'people_vaccinated') {
+                uasort($body, function (array $a, array $b) use ($covid_atts) {
+                    return $b['All'][$covid_atts['sort']] - $a['All'][$covid_atts['sort']];
+                });
+            } else {
+                ksort($body);
+            }
+
+            $iteration = 0;
+
+            $html = "<table>";
+            $html .= "<tr>";
+            $html .= "<th>" . __('Country', 'coronavirus-covid-19-watch') . "</th>";
+            $html .= "<th>" . __('Administered vaccines', 'coronavirus-covid-19-watch') . "</th>";
+            $html .= "<th>" . __('People vaccinated', 'coronavirus-covid-19-watch') . "</th>";
+            $html .= "<th>" . __('People partially vaccinated', 'coronavirus-covid-19-watch') . "</th>";
+            $html .= "</tr>";
+            foreach ($body as $key => $value) {
+                if ($key == 'Global') {
+                    continue;
+                }
+                if ($covid_atts['limit'] !== 0 && $iteration == $covid_atts['limit']) {
+                    break;
+                }
+                $html .= "<tr>";
+                $html .= "<td>" . $key . "</td>";
+                $html .= "<td>" . number_format($value['All']['administered']) . "</td>";
+                $html .= "<td>" . number_format($value['All']['people_vaccinated']) . "</td>";
+                $html .= "<td>" . number_format($value['All']['people_partially_vaccinated']) . "</td>";
+                $html .= "</tr>";
+                $iteration++;
+            }
+            $html .= "<tr>";
+            $html .= "<td><strong>Global</strong></td>";
+            $html .= "<td>" . number_format($body['Global']['All']['administered']) . "</td>";
+            $html .= "<td>" . number_format($body['Global']['All']['people_vaccinated']) . "</td>";
+            $html .= "<td>" . number_format($body['Global']['All']['people_partially_vaccinated']) . "</td>";
+            $html .= "</tr>";
+            if (get_option('covid_setting_attribute')) {
+                $html .= "<tfoot><tr>";
+                $html .= "<td><strong>" . __('API provider', 'coronavirus-covid-19-watch') . "</strong></td>";
+                $html .= '<td><strong><a href="https://mmediagroup.fr/covid-19?utm_source=wordpress&utm_medium=covid_plugin&utm_campaign=' . get_site_url() . '&utm_content=shortcode_vaccines" target="_BLANK" rel="noreferrer">M Media</a></strong></td>';
+                $html .= "<td></td>";
+                $html .= "</tr></tfoot>";
+            }
+            $html .= "</table>";
+            return $html;
+        } elseif (isset($body[esc_html__($covid_atts['country'])])) {
+            $number = number_format($body[esc_html__($covid_atts['country'])]['All'][esc_html__($covid_atts['status'])]);
+            return get_option('covid_setting_attribute') ? '<a href="https://mmediagroup.fr/covid-19?utm_source=wordpress&utm_medium=covid_plugin&utm_campaign=' . get_site_url() . '&utm_content=shortcode_vaccines" target="_BLANK" rel="noreferrer">' . $number . '</a>' : $number;
+        }
+        return "Country '" . $covid_atts['country'] . "' is invalid.";
     }
 
     public static function shortcode_map($atts = [], $content = null)
