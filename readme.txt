@@ -42,6 +42,15 @@ You can also use the historical shortcode, `[covid-history]` to show a table of 
 
 Just like in the live data shortcode, you can pass attributes to the history shortcode, like so `[covid-history country="France" status="confirmed" limit="3"]`.
 
+= Vaccine data shortcode =
+The shortcode you can use in your posts will always reference the most up to date number of vaccinations.
+
+Use the shortcode `[covid-vaccines]` in your code to show the current number of administered vaccines.
+
+You can pass a country and status, like `[covid-vaccines country="France" status="people_vaccinated"]` or `[covid-vaccines country="US" status="people_partially_vaccinated"]` to get results only from that country.
+
+You an also create a table of all country data, as you can with cases. See "Listing all countries" and replace `covid-watch` with `covid-vaccines`.
+
 = About recovered data =
 Some similar plugins may provide "recovered" data. We've been informed that a lot of countries are no longer reporting on recovered data because medical teams don't have the time to follow up with each patient. Because of this, Johns Hopkins and other data sources have stopped reporting recovered cases, and so have we. We recommend you don't show recovered cases as no accurate data is available.
 
@@ -91,6 +100,9 @@ We've been informed that a lot of countries are no longer reporting on recovered
 2. Example of the live map shortcode.
 
 == Changelog ==
+
+= 1.5.0 =
+* Added vaccine data
 
 = 1.4.9 =
 * Added support for newest version of WordPress, 5.7
@@ -165,8 +177,8 @@ We've been informed that a lot of countries are no longer reporting on recovered
 * Initial commit.
 
 == Upgrade Notice ==
-= 1.4.9 =
-Because of the dynamic situation, we update our plugin regularly. Update to the newest version now to get the most up to date features and information. Has this plugin been useful to you? Consider donating at the donate link on the plugin page!
+= 1.5.0 =
+New shortcode - vaccine data! Use [covid-vaccines] for up to date vaccination data.
 
 == Privacy policy ==
 This plugin uses data from Johns Hopkins University and ARCGIS, provided via API thanks to M Media (mmediagroup.fr). Here's a link to [M Media](https://mmediagroup.fr/), the API provider. Access the API directly here [M Media](https://covid-api.mmediagroup.fr/v1/cases). The M Media API privacy policy is [here](https://mmediagroup.fr/privacy-policy), the terms of use [here](https://mmediagroup.fr/terms-and-conditions) and the JHU Data Usage policy is [here](https://github.com/CSSEGISandData/COVID-19).
