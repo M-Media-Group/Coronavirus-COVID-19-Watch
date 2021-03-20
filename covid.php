@@ -2,9 +2,9 @@
 /*
 Plugin Name: Coronavirus COVID-19 Watch
 Plugin URI: https://mmediagroup.fr/covid-19
-Description: Free live data with total cases around the world or by country. Get live data on the admin dashboard, using the helpful link in the top toolbar to quickly get more info, or via shortcode (by country or global). There's even a widget that you can add to your footers, menus, and widget areas.
+Description: Free live, historical, and vaccine data with total cases around the world or by country. Get live data on the admin dashboard, using the helpful link in the top toolbar to quickly get more info, or via shortcode (by country or global). There's even a widget that you can add to your footers, menus, and widget areas.
 Author: M Media
-Version: 1.4.9
+Version: 1.5.0
 Author URI: https://profiles.wordpress.org/mmediagroup/
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -21,7 +21,7 @@ along with {Plugin Name}. If not, see {License URI}.
  */
 
 if (!defined('MMEDIA_COVID_VER')) {
-    define('MMEDIA_COVID_VER', '1.4.8');
+    define('MMEDIA_COVID_VER', '1.5.0');
 }
 
 // Start up the engine
@@ -62,6 +62,7 @@ class MMedia_Covid
         add_action('admin_bar_menu', array($this, 'covid_remove_toolbar_nodes'), 999);
         add_shortcode('covid-watch', array($this, 'shortcode_cases'));
         add_shortcode('covid-history', array($this, 'shortcode_history'));
+        add_shortcode('covid-vaccines', array($this, 'shortcode_vaccines'));
         add_shortcode('covid-live-map', array($this, 'shortcode_map'));
     }
 
